@@ -5,7 +5,7 @@ Simple containerized Spring-boot REST application
 [Docker installation](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 ### Docker-compose
 [Docker-compose installation](https://docs.docker.com/compose/install/)
-###Maven
+### Maven
 [Maven installation](https://maven.apache.org/install.html)
 ## Building
 Clone repository:
