@@ -38,8 +38,8 @@ public final class PhoneServiceImpl extends ServiceImpl<PhoneEntity, PhoneDto, L
         }
         return repository
                 .findAll(Example.of(createPhoneEntity(params)))
-                .stream()
-                .map(entity -> converter.toDto(entity))
+                .parallelStream()
+                .map(entity -> converter.toDto(entity, true))
                 .collect(Collectors.toList());
     }
 

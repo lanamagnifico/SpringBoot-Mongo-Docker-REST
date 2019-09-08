@@ -21,7 +21,7 @@ public final class PhoneConverter implements Converter<PhoneEntity, PhoneDto> {
     }
 
     @Override
-    public PhoneDto toDto(PhoneEntity entity) {
+    public PhoneDto toDto(PhoneEntity entity, boolean brief) {
         if (entity == null) {
             return null;
         }
@@ -29,7 +29,9 @@ public final class PhoneConverter implements Converter<PhoneEntity, PhoneDto> {
         dto.setId(entity.getId());
         dto.setManufacturer(entity.getManufacturer());
         dto.setModel(entity.getModel());
-        dto.setParameters(entity.getParameters());
+        if (!brief) {
+            dto.setParameters(entity.getParameters());
+        }
         return dto;
     }
 }

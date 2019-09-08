@@ -14,7 +14,7 @@ public abstract class ServiceImpl<ENTITY, DTO, ID> implements Service<DTO, ID> {
 
     @Override
     public DTO getById(ID id) {
-        return getConverter().toDto(getDao().findById(id).orElseThrow(EntityNotFoundException::new));
+        return getConverter().toDto(getDao().findById(id).orElseThrow(EntityNotFoundException::new), false);
     }
 
     @Override
@@ -22,7 +22,7 @@ public abstract class ServiceImpl<ENTITY, DTO, ID> implements Service<DTO, ID> {
         return getDao()
                 .findAll()
                 .parallelStream()
-                .map(entity -> getConverter().toDto(entity))
+                .map(entity -> getConverter().toDto(entity, true))
                 .collect(Collectors.toList());
     }
 
