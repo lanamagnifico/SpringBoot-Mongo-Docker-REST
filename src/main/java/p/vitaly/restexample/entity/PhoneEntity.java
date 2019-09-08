@@ -20,15 +20,4 @@ public final class PhoneEntity {
     private String model;
     private String manufacturer;
     private Map<String, String > parameters = new HashMap<>();
-
-    public static PhoneEntity from(Map<String, String> map) {
-        PhoneEntity entity = new PhoneEntity();
-        try {
-            entity.setId(Long.parseLong(map.remove("id")));
-        } catch (NumberFormatException ignore) { }
-        entity.setModel(map.remove("model"));
-        entity.setManufacturer(map.remove("manufacturer"));
-        entity.setParameters(map);
-        return entity;
-    }
 }
