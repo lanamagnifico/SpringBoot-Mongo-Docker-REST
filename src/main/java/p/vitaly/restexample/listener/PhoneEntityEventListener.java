@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 import p.vitaly.restexample.entity.PhoneEntity;
 import p.vitaly.restexample.service.SequenceGeneratorService;
 
+/**
+ * Listener used for assigning 'id' for created entities
+ */
 @Component
 public final class PhoneEntityEventListener extends AbstractMongoEventListener<PhoneEntity> {
     @Autowired

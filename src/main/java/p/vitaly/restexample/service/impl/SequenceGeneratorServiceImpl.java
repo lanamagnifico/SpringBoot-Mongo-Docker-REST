@@ -13,6 +13,9 @@ import p.vitaly.restexample.service.SequenceGeneratorService;
 
 import java.util.Objects;
 
+/**
+ * Service used for generating 'id' for new entities
+ */
 @Service
 public final class SequenceGeneratorServiceImpl implements SequenceGeneratorService {
     @Autowired

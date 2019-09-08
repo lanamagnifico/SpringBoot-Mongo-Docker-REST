@@ -3,6 +3,9 @@ package p.vitaly.restexample.dto;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 
+/**
+ * Used for Create, Update, Delete and Error response
+ */
 @Data
 public class ResponseDto {
     private int code;
