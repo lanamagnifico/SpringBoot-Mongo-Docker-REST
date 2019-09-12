@@ -1,20 +1,20 @@
 package p.vitaly.restexample.service.impl;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.transaction.annotation.Transactional;
 import p.vitaly.restexample.convertor.Converter;
-import p.vitaly.restexample.exception.EntityNotFoundException;
+import p.vitaly.restexample.dao.Dao;
 import p.vitaly.restexample.service.Service;
+
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class ServiceImpl<ENTITY, DTO, ID> implements Service<DTO, ID> {
     abstract Converter<ENTITY, DTO> getConverter();
-    abstract MongoRepository<ENTITY, ID> getDao();
+    abstract Dao<ENTITY, ID> getDao();
 
     @Override
     public DTO getById(ID id) {
-        return getConverter().toDto(getDao().findById(id).orElseThrow(EntityNotFoundException::new), false);
+        return getConverter().toDto(getDao().findById(id), false);
     }
 
     @Override
@@ -32,11 +32,7 @@ public abstract class ServiceImpl<ENTITY, DTO, ID> implements Service<DTO, ID> {
     }
 
     @Override
-    @Transactional
     public void delete(ID id) {
-        if (!getDao().existsById(id)) {
-            throw new EntityNotFoundException();
-        }
         getDao().deleteById(id);
     }
 }

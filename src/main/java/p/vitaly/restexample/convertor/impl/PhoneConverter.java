@@ -17,6 +17,8 @@ public final class PhoneConverter implements Converter<PhoneEntity, PhoneDto> {
         entity.setManufacturer(dto.getManufacturer());
         entity.setModel(dto.getModel());
         entity.setParameters(dto.getParameters());
+//        dto.getParameters().forEach((k, v) ->
+//                entity.getParameters().add(new ParameterEntity(k, v)));
         return entity;
     }
 

@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("phones")
-public final class PhoneController {
+public class PhoneController {
 
     @Autowired
     private Service<PhoneDto, Long> phoneService;

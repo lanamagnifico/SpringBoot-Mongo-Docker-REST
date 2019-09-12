@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
  * Used for Create, Update, Delete and Error response
  */
 @Data
-public class ResponseDto {
+public final class ResponseDto {
     private int code;
     private String description;
     private String message;

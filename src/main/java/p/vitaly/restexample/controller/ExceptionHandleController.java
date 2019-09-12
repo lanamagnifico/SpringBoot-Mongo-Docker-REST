@@ -10,7 +10,7 @@ import p.vitaly.restexample.dto.ResponseDto;
 import p.vitaly.restexample.exception.EntityNotFoundException;
 
 @ControllerAdvice
-public final class ExceptionHandleController {
+public class ExceptionHandleController {
 
     @ResponseBody
     @ExceptionHandler(EntityNotFoundException.class)
