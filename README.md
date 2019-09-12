@@ -67,12 +67,11 @@ Response 200 OK:
 [{
     "id":1,
     "model":"iPhone X",
-    "manufacturer":"Apple",
-    "parameters":{}
+    "manufacturer":"Apple"
 }]
 ```
 
-Response contains 'id', 'model' and 'manufacturer' fields filled only. All other fields will be empty.
+Response contains 'id', 'model' and 'manufacturer' fields only.
 #### Filtering
 Query parameters can be used to filter list:
 ```bash
