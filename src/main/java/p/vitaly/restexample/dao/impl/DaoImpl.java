@@ -19,7 +19,7 @@ public abstract class DaoImpl<ENTITY extends BasicEntity, ID> implements Dao<ENT
     }
 
     @Override
-    public ENTITY findById(ID id) {
+    public ENTITY findById(ID id) throws EntityNotFoundException {
         ENTITY entity = em.find(entityClass, id);
         if (entity == null) {
             throw new EntityNotFoundException();
@@ -45,7 +45,7 @@ public abstract class DaoImpl<ENTITY extends BasicEntity, ID> implements Dao<ENT
     }
 
     @Override
-    public void deleteById(ID id) {
+    public void deleteById(ID id) throws EntityNotFoundException {
         em.getTransaction().begin();
         ENTITY entity = findById(id);
         if (entity == null) {

@@ -1,5 +1,6 @@
 package p.vitaly.restexample.dao.impl;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import p.vitaly.restexample.entity.PhoneEntity;
 
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
+@Qualifier("phoneDao")
 public class PhoneDaoImpl extends DaoImpl<PhoneEntity, Long> {
 
     public PhoneDaoImpl() {

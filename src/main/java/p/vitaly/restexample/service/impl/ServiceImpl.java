@@ -4,7 +4,6 @@ import p.vitaly.restexample.convertor.Converter;
 import p.vitaly.restexample.dao.Dao;
 import p.vitaly.restexample.service.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
